@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Turnero Sala de Espera</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .header img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        .container {
+            display: flex;
+            height: calc(100% - header_height); /* Adjust height calculation */
+        }
+
+        .video-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .turnos-container {
+            width: 300px; /* Adjust width as needed */
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            border-left: 1px solid #ccc;
+        }
+
+        .turno-actual {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .cola-turnos {
+            overflow-y: auto;
+            max-height: 400px; /* Adjust max-height as needed */
+        }
+
+        .cola-turnos ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .cola-turnos li {
+            padding: 5px;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="{% static 'images/logo_institucional.png' %}" alt="Logo Institucional">
+        <h1>Turnero Sala de Espera</h1>
+    </div>
+
+    <div class="container">
+        <div class="video-container">
+            {% load static %}
+            <video src="{% static 'videos/video_institucional.mp4' %}" autoplay loop controls></video>
+        </div>
+
+        <div class="turnos-container">
+            <div class="turno-actual" id="turno-actual">
+                {% if turno_actual %}
+                    <h1>Turno Actual: {{ turno_actual.numero }}</h1>
+                    <h2>Lugar: {{ turno_actual.lugar }}</h2>
+                {% else %}
+                    <h1>No hay turnos disponibles</h1>
+                {% endif %}
+            </div>
+
+            <div class="cola-turnos" id="cola-turnos">
+                <h2>Turnos Pasados</h2>
+                <ul id="lista-turnos-pasados">
+                    {% for turno in turnos_pasados %}
+                        <li>{{ turno.numero }} - {{ turno.lugar }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    {% load static %}
+    <audio id="sonido-turno" src="{% static 'sounds/turno.mp3' %}"></audio>
+    <script>
+        let turnoActualAnterior = null;
+
+        function cargarTurnos() {
+            fetch('/api/turnos/')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.length > 0) {
+                        const turnoActual = data[data.length - 1];
+
+                        if (turnoActualAnterior !== null && turnoActual.numero !== turnoActualAnterior) {
+                            const sonidoTurno = document.getElementById('sonido-turno');
+                            sonidoTurno.play();
+
+                            document.getElementById('turno-actual').innerHTML = `
+                                <h1>Turno Actual: ${turnoActual.numero}</h1>
+                                <h2>Lugar: ${turnoActual.lugar}</h2>
+                            `;
+
+                            const turnosPasados = data.slice(Math.max(data.length - 11, 0), data.length - 1);
+                            const listaTurnosPasados = document.getElementById('lista-turnos-pasados');
+                            listaTurnosPasados.innerHTML = '';
+                            turnosPasados.forEach(turno => {
+                                const li = document.createElement('li');
+                                li.textContent = `${turno.numero} - ${turno.lugar}`;
+                                listaTurnosPasados.appendChild(li);
+                            });
+                        }
+
+                        turnoActualAnterior = turnoActual.numero;
+                    } else {
+                        document.getElementById('turno-actual').innerHTML = '<h1>No hay turnos disponibles</h1>';
+                        document.getElementById('lista-turnos-pasados').innerHTML = '';
+                    }
+                })
+                .catch(error => console.error('Error al cargar turnos:', error));
+        }
+
+        cargarTurnos();
+        setInterval(cargarTurnos, 5000);
+    </script>
+</body>
+</html>

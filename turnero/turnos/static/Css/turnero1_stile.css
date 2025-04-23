@@ -1,0 +1,58 @@
+ body {
+            font-family: sans-serif;
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .header img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        .container {
+            display: flex;
+            height: calc(100% - header_height); /* Adjust height calculation */
+        }
+
+        .video-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .turnos-container {
+            width: 300px; /* Adjust width as needed */
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            border-left: 1px solid #ccc;
+        }
+
+        .turno-actual {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .cola-turnos {
+            overflow-y: auto;
+            max-height: 400px; /* Adjust max-height as needed */
+        }
+
+        .cola-turnos ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .cola-turnos li {
+            padding: 5px;
+            border-bottom: 1px solid #eee;
+        }

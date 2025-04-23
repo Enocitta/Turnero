@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Turnero Sala de Espera</title>
+    {% load static %}
+     <link rel="stylesheet" href="{% static  'Css/turnero1_stile.css' %}"/>
+
+</head>
+<body>
+    <div class="header">
+         {% load static %}
+        <img src="{% static 'images/megaman.png' %}" alt="Logo Institucional">
+        <h1>Turnero Sala de Espera</h1>
+    </div>
+
+    <div class="container">
+        <div class="video-container">
+            {% load static %}
+            <video src="{% static 'videos/institucional.mp4' %}" autoplay loop controls muted></video>
+        </div>
+
+        <div class="turnos-container">
+            <div class="turno-actual" id="turno-actual">
+                {% if turno_actual %}
+                    <h1>Turno Actual: {{ turno_actual.numero }}</h1>
+                    <h2>Lugar: {{ turno_actual.lugar }}</h2>
+                {% else %}
+                    <h1>No hay turnos disponibles</h1>
+                {% endif %}
+            </div>
+
+            <div class="cola-turnos" id="cola-turnos">
+                <h2>Turnos Pasados</h2>
+                <ul id="lista-turnos-pasados">
+                    {% for turno in turnos_pasados %}
+                        <li>{{ turno.numero }} - {{ turno.lugar }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    {% load static %}
+    <audio id="sonido-turno" src="{% static 'sounds/turno.mp3' %}"></audio>
+    {% load static %}
+    <script src="{% static 'code/func_turnero.js' %}"></script>
+</body>
+
+</html>
