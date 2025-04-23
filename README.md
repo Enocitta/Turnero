@@ -76,4 +76,4 @@ Las contribuciones son bienvenidas. Si deseas contribuir al proyecto, sigue esto
 
 ## **Licencia**
 
-Este proyecto está licenciado bajo la licencia \[Nombre de la Licencia\].
+Este proyecto está licenciado bajo la licencia \[Licencia Personal\].
