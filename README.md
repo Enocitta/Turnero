@@ -51,6 +51,9 @@ Turnero es una aplicación web desarrollada con Django que permite a los comerci
     se procedera a la instalacion de el entorno virtual y de los paquetes
     de dependencia que estan en requirements.txt
 **-----------------------------------------**
+3. **verifique que se haya creado la carpeta venv**
+   verifique que en su directorio de proyecto se encuentra la carpeta .venv
+   y que tiene la version correcta de pyhon.
 
 4. **Configurar la base de datos:**  
    * Crea una base de datos PostgreSQL.  
