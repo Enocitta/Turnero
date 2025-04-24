@@ -1,5 +1,7 @@
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/Django)
 ![PyPI - Wheel](https://img.shields.io/pypi/wheel/djangorestframework?label=djangorestframework)
+![GitHub Pipenv locked dependency version](https://img.shields.io/github/pipenv/locked/dependency-version/Enocitta/Turnero/django)
+
 
 # **Turnero**
 
