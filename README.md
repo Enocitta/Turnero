@@ -28,10 +28,11 @@ Turnero es una aplicación web desarrollada con Django que permite a los comerci
 
 ## **Instalación**
 
-1. **Clonar el repositorio:**  
-   git clone https://github.com/Enocitta/Turnero.git  
-   cd Turnero
-**-----------------------------------------**
+1. **Clonar el repositorio:** 
+   ```
+   $ git clone https://github.com/Enocitta/Turnero.git  
+   $ cd Turnero
+   ```
 **Metodo general**
 1A. **Crear un entorno virtual (recomendado):**  
    ```
