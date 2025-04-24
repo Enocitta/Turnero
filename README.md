@@ -34,23 +34,29 @@ Turnero es una aplicación web desarrollada con Django que permite a los comerci
 **-----------------------------------------**
 **Metodo general**
 1A. **Crear un entorno virtual (recomendado):**  
-   * **\`\`\`bash** :python3 \-m venv venv  
-   * **\`\`\`bash** :source venv/bin/activate  \# En Linux/macOS  
-   * **\`\`\`bash** :venv\\Scripts\\activate.bat \# En Windows
-
+   ```
+   $ python3 \-m venv venv  
+   $ source venv/bin/activate  \# En Linux/macOS  
+   $ venv\\Scripts\\activate.bat \# En Windows
+   ```
 2A. **Instalar las dependencias:**  
-  * **\`\`\`bash** : pip install \-r requirements.txt
-**-----------------------------------------**
+  ```
+  $ pip install \-r requirements.txt
+  ```
 **Metodo Automatico**
 1B. **ejecutar el scrip de instalacion de entorno virtual**
     antes de proceder asegurese de tener instalado python3.12-venv
     de no ser asi use el siguiente comando
-    * **```$ sudo apt install python3.12-venv```** 
+    ```
+    $ sudo apt install python3.12-venv
+    ```
     en terminal de linux o de pycharm ejecute localmente
-    * **```$  ./instaler_env.sh```** 
+    ```
+    $  ./instaler_env.sh
+    ``` 
     se procedera a la instalacion de el entorno virtual y de los paquetes
     de dependencia que estan en requirements.txt
-**-----------------------------------------**
+
 3. **verifique que se haya creado la carpeta venv**
    verifique que en su directorio de proyecto se encuentra la carpeta .venv
    y que tiene la version correcta de pyhon.
