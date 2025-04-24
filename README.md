@@ -63,17 +63,21 @@ Turnero es una aplicación web desarrollada con Django que permite a los comerci
    y que tiene la version correcta de pyhon.
 
 4. **Configurar la base de datos:**  
-   * Crea una base de datos PostgreSQL.  
+   * Crea una base de datos PostgreSQL (por defecto se puede usar la SQLite del proyecto).  
    * Configura los parámetros de la base de datos en el archivo settings.py de Django.  
 5. **Ejecutar las migraciones de Django:**  
-   python manage.py migrate
-
+    ```
+    $ python manage.py migrate
+    ```
 6. **Crear un superusuario de Django:**  
-   python manage.py createsuperuser
-
-7. **Ejecutar el servidor de desarrollo:**  
-   python manage.py runserver
-
+    ```
+    $ python manage.py createsuperuser
+    ```
+7. **Ejecutar el servidor de desarrollo:**
+    ```
+   $ python manage.py runserver
+    ```
+   
 8. **Acceder a la aplicación:**  
    * Abre un navegador web y visita http://localhost:8000/.  
    * Accede a la interfaz de administración en http://localhost:8000/admin/.
