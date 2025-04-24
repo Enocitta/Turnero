@@ -1,4 +1,6 @@
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/Django)
+![PyPI - Wheel](https://img.shields.io/pypi/wheel/djangorestframework?label=djangorestframework)
+
 # **Turnero**
 
 Sistema de gestión de turnos para comercios.
