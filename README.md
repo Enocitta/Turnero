@@ -31,14 +31,26 @@ Turnero es una aplicación web desarrollada con Django que permite a los comerci
 1. **Clonar el repositorio:**  
    git clone https://github.com/Enocitta/Turnero.git  
    cd Turnero
+**-----------------------------------------**
+**Metodo general**
+1A. **Crear un entorno virtual (recomendado):**  
+   * **\`\`\`bash** :python3 \-m venv venv  
+   * **\`\`\`bash** :source venv/bin/activate  \# En Linux/macOS  
+   * **\`\`\`bash** :venv\\Scripts\\activate.bat \# En Windows
 
-2. **Crear un entorno virtual (recomendado):**  
-   python3 \-m venv venv  
-   source venv/bin/activate  \# En Linux/macOS  
-   venv\\Scripts\\activate.bat \# En Windows
-
-3. **Instalar las dependencias:**  
-   pip install \-r requirements.txt
+2A. **Instalar las dependencias:**  
+  * **\`\`\`bash** : pip install \-r requirements.txt
+**-----------------------------------------**
+**Metodo Automatico**
+1B. **ejecutar el scrip de instalacion de entorno virtual**
+    antes de proceder asegurese de tener instalado python3.12-venv
+    de no ser asi use el siguiente comando
+    * **\`\`\`bash** :sudo apt install python3.12-venv
+    en terminal de linux o de pycharm ejecute localmente
+    * **\`\`\`bash** :./instaler_env.sh
+    se procedera a la instalacion de el entorno virtual y de los paquetes
+    de dependencia que estan en requirements.txt
+**-----------------------------------------**
 
 4. **Configurar la base de datos:**  
    * Crea una base de datos PostgreSQL.  
