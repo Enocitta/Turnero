@@ -45,9 +45,9 @@ Turnero es una aplicación web desarrollada con Django que permite a los comerci
 1B. **ejecutar el scrip de instalacion de entorno virtual**
     antes de proceder asegurese de tener instalado python3.12-venv
     de no ser asi use el siguiente comando
-    * **\`\`\`bash** :sudo apt install python3.12-venv
+    * **```$ sudo apt install python3.12-venv```** 
     en terminal de linux o de pycharm ejecute localmente
-    * **\`\`\`bash** :./instaler_env.sh
+    * **```$  ./instaler_env.sh```** 
     se procedera a la instalacion de el entorno virtual y de los paquetes
     de dependencia que estan en requirements.txt
 **-----------------------------------------**
