@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Turnero Sala de Espera</title>
     {% load static %}
@@ -8,9 +8,10 @@
 </head>
 <body>
     <div class="header">
+        <h1>Turnero Sala de Espera  </h1>
          {% load static %}
-        <img src="{% static 'images/megaman.png' %}" alt="Logo Institucional">
-        <h1>Turnero Sala de Espera</h1>
+        <img src="{% static 'images/logo_clinica.svg' %}" alt="Logo Institucional">
+
     </div>
 
     <div class="container">
@@ -40,10 +41,23 @@
         </div>
     </div>
 
+
+</body>
+<footer>
+    <h2>Noticias Destacadas</h2>
+
+    <div id="rss-feed-container">
+       <p class="loading-message">"Cargar Noticias".</p>
+    </div>
+
+</footer>
+
+
     {% load static %}
     <audio id="sonido-turno" src="{% static 'sounds/turno.mp3' %}"></audio>
     {% load static %}
     <script src="{% static 'code/func_turnero.js' %}"></script>
-</body>
+    {% load static %}
+    <script src="{% static 'code/rss_functions2.js' %}"></script>
 
 </html>

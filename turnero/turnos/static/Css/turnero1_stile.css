@@ -1,19 +1,32 @@
  body {
             font-family: sans-serif;
-            display: flex;
-            height: 100vh;
-            margin: 0;
+            /*display: flex;*/
+            /*height: 15%;*/
+
+            margin: 0; /* Elimina el margen por defecto del body */
+            padding: 0; /* Elimina el padding por defecto del body */
         }
 
-        .header {
+        .header  {
             text-align: center;
-            padding: 20px;
+            width: 100%; /* Define el ancho deseado para tu div */
+            height: 15%;
+            margin: 0 auto;
+            /*padding: 20px;*/
             background-color: #f0f0f0;
+
+
+
         }
 
         .header img {
-            max-width: 200px;
-            height: auto;
+            max-width: 100px;
+             position: absolute;
+             left:1%;
+             top:0;
+
+
+
         }
 
         .container {
@@ -39,6 +52,7 @@
         .turno-actual {
             text-align: center;
             margin-bottom: 20px;
+            color:red;
         }
 
         .cola-turnos {
@@ -56,3 +70,15 @@
             padding: 5px;
             border-bottom: 1px solid #eee;
         }
+
+ footer{
+      position:absolute;
+
+      left:0%;
+      top: 90%;
+      width: 100%; /* Define el ancho deseado para tu div */
+      height: bottom;
+      background-color: grey !important;
+      color: white;
+      }
+
