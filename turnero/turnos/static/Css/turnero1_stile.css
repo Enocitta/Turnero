@@ -39,10 +39,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            width: 50%; /* Define el ancho deseado para tu div */
+            height: 40%;
         }
 
         .turnos-container {
-            width: 300px; /* Adjust width as needed */
+            width: 40%; /* Adjust width as needed */
             padding: 20px;
             display: flex;
             flex-direction: column;
@@ -53,7 +55,18 @@
             text-align: center;
             margin-bottom: 20px;
             color:red;
+
         }
+        .turno-actual h1 {
+            font-size: xxx-large;
+
+
+        }
+        .turno-actual h2 {
+           font-size: 30px;
+
+        }
+
 
         .cola-turnos {
             overflow-y: auto;
